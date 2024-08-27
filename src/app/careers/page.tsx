@@ -15,7 +15,7 @@ export default function Company() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>会社案内 - G-TREE</title>
+        <title>会社案内 ー G-TREE</title>
         <meta name="description" content="G-TREE corporate information" />
         <link rel="icon" href="" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -85,7 +85,7 @@ export default function Company() {
        <h2>給与</h2>
        <p>月給241,000円+賞与</p>
        <h2>勤務場所</h2>
-       <p>東京本社 もしくは拠点オフィス</p>
+       <p>東京本社  もしくは拠点オフィス</p>
       </section>
           </Box>
           <div className={styles.blocks}>
