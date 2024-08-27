@@ -1,0 +1,167 @@
+$primary-color: #8bc34a;
+$secondary-color: #4caf50;
+$background-color: #f1f8e9;
+$text-color: #333;
+$app-bar-padding: 0 3rem;
+
+// コンテナスタイル
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $background-color;
+  align-items: center;
+}
+
+// AppBarスタイル
+.appBar {
+  width: 70%;
+  background-color: #73d2079c;
+  padding: $app-bar-padding;
+  margin: 30px;
+  margin-bottom: 0;
+  position: fixed;
+  z-index: 1000;
+ border-radius: 50px;
+  .navLinks {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      color: white;
+      text-transform: none;
+      font-size: 0.875rem;
+    }
+  }
+}
+
+// アクティブタブ
+.activeTab {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+// メインコンテンツ
+.main {
+  margin-top: 90px;
+  flex: 1;
+  padding: 2rem 0;
+  background-color: $background-color;
+}
+
+// セクションタイトル
+.sectionTitle {
+  color: $secondary-color;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: serif;
+  position: relative;
+
+  span {
+    display: block;
+    font-size: 0.8rem;
+    color: rgb(99, 99, 99);
+    opacity: 0.7;
+  }
+}
+
+// フィーチャーセクション
+.featureSection {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.featureTitle {
+  font-family: serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem; // 増加: テキストと線の間に十分なスペースを確保
+  position: relative;
+  color: $secondary-color;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%; // テキストの下に線を配置
+    width: 40%;
+    height: 1px;
+    background: $secondary-color;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+}
+
+// コンテンツラッパー
+.contentWrapper {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+// Blocks
+.blocks {
+  display: flex;
+  gap: 1rem; // 要素間の隙間
+  flex-wrap: wrap; // 要素がはみ出る場合に折り返す
+  justify-content: center; // 中央に揃える
+}
+
+.block {
+  flex: 1 1 calc(33% - 1rem); // 3列に分け、要素間に隙間を設ける
+  max-width: 345px;
+  margin: 0.5rem;
+}
+
+.footer {
+    background-color: $primary-color;
+    padding: 1rem 0;
+    width: 100%;
+  
+    .footerContent {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+  
+    .logoContainer {
+      display: flex;
+      align-items: center;
+    }
+  
+    .companyInfo {
+      margin-left: 1rem;
+      color: white;
+    }
+  
+    .footerBottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid white;
+      padding-top: 1rem;
+    }
+  
+    .copyright {
+      color: white;
+    }
+  
+    .navLinks {
+      display: flex;
+      gap: 1rem;
+  
+      button {
+        color: white;
+        text-transform: none;
+        font-size: 0.875rem;
+      }
+    }
+  }
+  

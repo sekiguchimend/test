@@ -1,0 +1,260 @@
+// Home.module.scss
+
+$primary-color: #8bc34a;
+$secondary-color: #4caf50;
+$background-color: #f1f8e9;
+$text-color: #333;
+$app-bar-padding: 0 3rem;
+
+// コンテナスタイル
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $background-color;
+  align-items: center;
+}
+
+// AppBarスタイル
+.appBar {
+  width: 70%;
+  background-color: #73d2079c;
+  padding: $app-bar-padding;
+  margin: 30px;
+  margin-bottom: 0;
+  position: fixed;
+  z-index: 1000;
+  border-radius: 50px;
+
+  .navLinks {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      color: white;
+      text-transform: none;
+      font-size: 0.875rem;
+    }
+  }
+}
+
+// アクティブタブ
+.activeTab {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+// メインコンテンツ
+.main {
+  margin-top: 90px;
+  flex: 1;
+  padding: 2rem 0;
+  background-color: $background-color;
+}
+
+// バナー
+.banner {
+  background-image: url('/path/to/your/wood-texture.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Impact', sans-serif;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+  .bannerText {
+    font-weight: bold;
+    border: 2px solid #fff;
+    padding: 0.5rem;
+  }
+
+  .arrow {
+    float: right;
+    font-size: 2rem;
+  }
+}
+
+// セクションタイトル
+.sectionTitle {
+  color: $secondary-color;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: serif;
+
+  span {
+    display: block;
+    font-size: 0.8rem;
+    color: rgb(99, 99, 99);
+    opacity: 0.7;
+    margin-top: 0.5rem;
+  }
+}
+
+// カード
+.card {
+  margin-bottom: 2rem;
+  transition: box-shadow 0.3s ease;
+  display: flex;
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.cardContentWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.cardImage {
+  margin-right: 20px;
+}
+
+.cardContent {
+  flex: 1;
+}
+.h1{
+  text-align: center;
+  margin-bottom: 30px;
+}
+// フッター
+.footer {
+  background-color: $primary-color;
+  padding: 1rem 0;
+  width: 100%;
+
+  .footerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .logoContainer {
+    display: flex;
+    align-items: center;
+  }
+
+  .companyInfo {
+    margin-left: 1rem;
+    color: white;
+  }
+
+  .footerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid white;
+    padding-top: 1rem;
+  }
+
+  .copyright {
+    color: white;
+  }
+
+  .navLinks {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      color: white;
+      text-transform: none;
+      font-size: 0.875rem;
+    }
+  }
+}
+
+// スマホ画面用のスタイル
+@media (max-width: 600px) {
+  .appBar {
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0;
+    border-radius: 0;
+
+    .navLinks {
+      button {
+        font-size: 1.25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .text {
+        display: none;
+      }
+    }
+  }
+
+  .main {
+    margin-top: 60px;
+    padding: 1rem;
+  }
+
+  .banner {
+    font-size: 1.5rem;
+    padding: 1rem;
+
+    .bannerText {
+      padding: 0.25rem;
+    }
+
+    .arrow {
+      font-size: 1.5rem;
+    }
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+
+    span {
+      font-size: 0.7rem;
+    }
+  }
+
+  .card {
+    flex-direction: column;
+  }
+
+  .cardContentWrapper {
+    flex-direction: column;
+  }
+
+  .cardImage {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: auto;
+  }
+
+  .footer {
+    .footerContent {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .logoContainer {
+      margin-bottom: 1rem;
+    }
+
+    .companyInfo {
+      margin-left: 0;
+      margin-bottom: 1rem;
+    }
+
+    .footerBottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .copyright {
+      margin-bottom: 1rem;
+    }
+
+    .navLinks {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+}

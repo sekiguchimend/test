@@ -1,0 +1,48 @@
+.block {
+    display: flex;
+    flex-direction: column; // 縦並び
+    gap: 1rem; // 要素間のスペース
+    margin-bottom: 3rem; // 下部マージン
+    margin-top: 3em;
+  }
+  
+  .block2 {
+    display: flex;
+    gap: 4em; // 要素間のスペース
+    flex-wrap: wrap; // 要素がはみ出る場合に折り返す
+    margin-bottom: 3rem; // 下部マージン
+  }
+  
+  .card {
+    max-width: 345px;
+    margin: auto; // 中央揃え（カード全体）
+    
+    .MuiCardActionArea-root {
+      display: flex;
+      flex-direction: column; // 縦並び
+      align-items: center; // 中央揃え（カード内）
+    }
+    .imageWrapper{
+        background-color: rgb(175, 219, 175);
+        display: flex;
+      flex-direction: column; // 縦並び
+      align-items: center; // 中央揃え（カード内）
+    }
+    .MuiCardMedia-root {
+      display: flex;
+      justify-content: center; // 横方向に中央配置
+      align-items: center; // 縦方向に中央配置
+      height: 140px; // 画像の高さを設定
+      width: 140px; // 画像の幅を設定
+      object-fit: cover; // 画像のサイズをカバーする
+      margin: 0; // マージンリセット
+    }
+  
+    .MuiCardContent-root {
+      display: flex;
+      flex-direction: column;
+      align-items: center; // 中央揃え（カード内）
+      text-align: center; // テキストを中央に配置
+    }
+  }
+  

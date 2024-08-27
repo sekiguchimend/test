@@ -1,113 +1,138 @@
-import Image from "next/image";
+"use client";
+import { useState } from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';  // 追加
+import { AppBar, Toolbar, Typography, Button, Container, Box, Card, CardContent, CardActions, Grid, Paper } from '@mui/material';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import BusinessIcon from '@mui/icons-material/Business';
+import GroupIcon from '@mui/icons-material/Group';
+import styles from './Home.module.scss';
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState('事業紹介');
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <div className={styles.container}>
+      <Head>
+        <title>G-TREE</title>
+        <meta name="description" content="G-TREE corporate website" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      </Head>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <AppBar position="static" className={styles.appBar}>
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Image src="/favicon.ico" alt="G-TREE Logo" width={120} height={40} />
+          </Typography>
+          <Link href="/" passHref>
+            <Button
+              color="inherit"
+              startIcon={<AccountBalanceIcon />}
+              onClick={() => setActiveTab('事業紹介')}
+              className={activeTab === '事業紹介' ? styles.activeTab : ''}
+            >
+              事業紹介
+            </Button>
+          </Link>
+          <Link href="/company" passHref>
+            <Button
+              color="inherit"
+              startIcon={<BusinessIcon />}
+              onClick={() => setActiveTab('会社案内')}
+              className={activeTab === '会社案内' ? styles.activeTab : ''}
+            >
+              会社案内
+            </Button>
+          </Link>
+          <Link href="/careers" passHref>
+            <Button
+              color="inherit"
+              startIcon={<GroupIcon />}
+              onClick={() => setActiveTab('スタッフ募集')}
+              className={activeTab === 'スタッフ募集' ? styles.activeTab : ''}
+            >
+              スタッフ募集
+            </Button>
+          </Link>
+        </Toolbar>
+      </AppBar>
+      <main className={styles.main}>
+        <Container maxWidth="lg">
+          <Typography variant="h4" component="h2" className={styles.sectionTitle}>
+            事業紹介<span>Business Introduction</span>
+          </Typography>
+          <h1 className={styles.h1}>ここに写真をいれる</h1>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          <Card className={styles.card}>
+            <Box className={styles.cardContentWrapper}>
+              <Image src="/true-self.jpg" alt="TRUE SELF" width={300} height={300} className={styles.cardImage} />
+              <CardContent className={styles.cardContent}>
+                <Typography variant="h5" component="div" gutterBottom>
+                  TRUE SELF <span style={{ fontSize: '0.7em', color: 'rgba(0, 0, 0, 0.7)' }}>整体 & リラクゼーション</span>
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  本来の自分自身の快適な状態を取り戻すをコンセプトとし、2014年より開始した整体＆リラクゼーション事業です。
+                  癒しの空間に通っていただき、筋肉や骨の障害の元を取りながらバランスを戻し、自然治癒力をあげていくことを目指しています。
+                </Typography>
+                <CardActions>
+                  <Button size="small" color="primary" href="https://web.archive.org/web/20170923150443/http://true-self.jp.net/" target="_blank" rel="noopener noreferrer">
+                    TRUE SELF ホームページはこちら ＞＞
+                  </Button>
+                </CardActions>
+              </CardContent>
+            </Box>
+          </Card>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <Card className={styles.card}>
+            <Box className={styles.cardContentWrapper}>
+              <Image src="/chery.jpg" alt="さくら整体院" width={300} height={300} className={styles.cardImage} />
+              <CardContent className={styles.cardContent}>
+                <Typography variant="h5" component="div" gutterBottom>
+                  さくら整体院 <span style={{ fontSize: '0.7em', color: 'rgba(0, 0, 0, 0.7)' }}>整体 & アロマオイルコース</span> 
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  G-TREE株式会社代表取締役・玉井が、津田沼（千葉県）に2008年に開業した整体院。
+                  “身体全体のバランスを取り戻し体の機能を改善し自然治癒力を高めるのが整体”という
+                  信念の元で施術を行うTRUE SELFの母体となった整体院です。
+                  女性スタッフによるアロマオイルコースもございます。
+                </Typography>
+                <CardActions>
+                  <Button size="small" color="primary" href="https://web.archive.org/web/20170923150443/http://sakuraseitai.jp/" target="_blank" rel="noopener noreferrer">
+                    さくら整体院 ホームページはこちら ＞＞
+                  </Button>
+                </CardActions>
+              </CardContent>
+            </Box>
+          </Card>
+        </Container>
+      </main>
+      
+      <footer className={styles.footer}>
+        <Container maxWidth="lg">
+          <Box className={styles.footerContent}>
+            <Box className={styles.logoContainer}>
+              <Image src="/g-tree-logo.png" alt="G-TREE Logo" width={50} height={50} />
+              <Box className={styles.companyInfo}>
+                <Typography variant="h6" component="div">G-TREE株式会社</Typography>
+                <Typography variant="body2">〒260-0028 千葉県千葉市中央区新町1-18 上野ビル3F</Typography>
+                <Typography variant="body2">TEL：043-216-2365</Typography>
+              </Box>
+            </Box>
+          </Box>
+          <Box className={styles.footerBottom}>
+            <Typography variant="body2" className={styles.copyright}>
+              Copyright c G-TREE All right reserved
+            </Typography>
+            <Box className={styles.navLinks}>
+              <Button color="inherit">事業紹介</Button>
+              <Button color="inherit">会社案内</Button>
+              <Button color="inherit">スタッフ募集</Button>
+            </Box>
+          </Box>
+        </Container>
+      </footer>
+    </div>
   );
 }
