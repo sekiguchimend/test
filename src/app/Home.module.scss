@@ -17,14 +17,14 @@ $app-bar-padding: 0 3rem;
 
 // AppBarスタイル
 .appBar {
-  width: 70%;
-  background-color: #73d2079c;
-  padding: $app-bar-padding;
-  margin: 30px;
-  margin-bottom: 0;
-  position: fixed;
-  z-index: 1000;
-  border-radius: 50px;
+  width: 70% !important;
+  background-color: #73d2079c!important;
+  padding: $app-bar-padding !important;
+  margin: 30px !important;
+  margin-bottom: 0 !important;
+  position: fixed !important;
+  z-index: 1000 !important;
+  border-radius: 50px !important;
 
   .navLinks {
     display: flex;
@@ -45,7 +45,7 @@ $app-bar-padding: 0 3rem;
 
 // メインコンテンツ
 .main {
-  margin-top: 90px;
+  margin-top: 120px;
   flex: 1;
   padding: 2rem 0;
   background-color: $background-color;

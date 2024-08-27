@@ -24,7 +24,7 @@ export default function Home() {
       <AppBar position="static" className={styles.appBar}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Image src="/favicon.ico" alt="G-TREE Logo" width={120} height={40} />
+            <Image src="/" alt="G-TREE Logo" width={120} height={40} />
           </Typography>
           <Link href="/" passHref>
             <Button
